@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo 1 Table to add Multiple values</title>
+	<style type="text/css">
+         body{
+            font-family: tahoma;
+            background-image: url(a.jpg);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            opacity: 0.6;   
+        }
+
+		table{
+			margin-top: 50px;
+			text-align: center;
+			background-color: rgba(76, 15, 247, 0.7);
+            background-color: black;
+			color: white;
+			font-size: 21px;
+			width: 80%;
+            padding: 5px;
+			border-color: blue;
+		}
+		table input{
+		   text-align: center;
+			/* background-color:rgb(80, 57, 211); */
+            /* background-color: black; */
+			color: black;
+			font-size: 21px;
+            padding: 5px;
+			width: 98%;	
+		}
+		button{
+           margin-top: 50px;
+			text-align: center;
+			background-color: black;
+			color: white;
+			font-size: 21px;
+			width: 20%;
+			border:4px double blue;
+		}
+	</style>
+</head>
+<body>
+    <center>
+        <h1 style="color: black;">Lets GrowMore Task 3</h1>
+    </center>
+
+   
+	<center>
+		<table border="3" >
+			<thead>
+				<tr>
+				<th>Name</th>
+				<th>Mobile</th>
+				<th>Email</th>
+				<th>Website</th>
+				<th>DOB</th>
+				</tr>
+			</thead>
+			<tbody >
+				<tr>
+					<td ><input type="text" name="fname" id="fname" required ></td>
+					<td><input type="text" name="mobile" id="mobile" required ></td>
+					<td><input type="email" name="mail" id="email" ></td>
+					<td><input type="text" name="mail" id="web" ></td>
+					<td><input type="date"   required name="date" id="date" ></td>
+				</tr>
+			</tbody>
+		</table>
+		<button id="btn1" onclick="addrow()" value="add" >Save</button>
+		<table border="3" id="data">
+			<thead>
+				<th>Sr.No.</th>
+				<th>Name</th>
+				<th>Mobile</th>
+				<th>Email</th>
+				<th>Website</th>
+				<th>DOB</th>
+			</thead>
+		</table>
+	</center>
+	<script type="text/javascript">
+
+		var sr1=[];
+		var sr2=[];
+		var sr3=[];
+		var sr4=[];
+		var sr41=[];
+		var sr5=[];
+
+		var n=1;//no. of rows
+		var x=0;//no. of columns
+		function addrow(){
+			var addrow1=document.getElementById('data');
+			var NewRow=addrow1.insertRow(n);
+
+            sr1[x]=n;
+			sr2[x]=document.getElementById('fname').value;
+			sr3[x]=document.getElementById('mobile').value;
+			sr4[x]=document.getElementById('email').value;
+			sr41[x]=document.getElementById('web').value;
+			sr5[x]=document.getElementById('date').value;
+			
+
+			
+			var nsr1=NewRow.insertCell(0);
+			var nsr2=NewRow.insertCell(1);
+			var nsr3=NewRow.insertCell(2);
+			var nsr4=NewRow.insertCell(3);
+			var nsr41=NewRow.insertCell(4);
+			var nsr5=NewRow.insertCell(5);
+
+			nsr1.innerHTML=sr1[x];
+			nsr2.innerHTML=sr2[x];
+			nsr3.innerHTML=sr3[x];
+			nsr4.innerHTML=sr4[x];
+			nsr41.innerHTML=sr41[x];
+			nsr5.innerHTML=sr5[x];
+ 
+            n++;
+            x++;
+		}
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
